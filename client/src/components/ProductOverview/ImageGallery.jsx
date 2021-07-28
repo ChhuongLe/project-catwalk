@@ -24,6 +24,7 @@ const Thumbnail = styled.img`
   width: 50px;
   height: 65px;
   border: 2px solid;
+  object-fit: cover;
   border-color: ${(props) => (props.selected ? '#FF5A5F' : '#ddd')};
   border-radius: 7%;
   padding: 3px;
