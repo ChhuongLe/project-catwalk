@@ -126,11 +126,13 @@ const StyledTable = styled.table`
 // Correct photo that corresponds with the data
 const Card = ({
   // eslint-disable-next-line react/prop-types
-  itemName, price, image, ratings, category, product, features,
+  id, itemName, price, image, ratings, category, product, features, getProdId,
 }) => {
   const [currentCompare, setCurrentCompare] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedHearts, setSelectedHearts] = useState(false);
+
+  getProdId = getProdId.bind(this);
 
   const addOutfit = () => {
     setSelectedHearts(!selectedHearts);
@@ -185,18 +187,6 @@ const Card = ({
     return results.map((element, index) => <Comparison feature={element} key={index} />);
   };
 
-  // Check mark
-  // if (recommend) {
-  //   recommended = (
-  //     <span className="leftSide">
-  //       <span className="green">
-  //         &#10003;
-  //       </span>
-  //       {' I recommend this product'}
-  //     </span>
-  //   );
-  // }
-
   let modal;
   let hearts;
 
@@ -234,6 +224,10 @@ const Card = ({
     setCurrentCompare(features);
   };
 
+  const sendProdId = () => {
+    getProdId(id);
+  };
+
   // pass data that was selected to outfitList
   return (
     <>
@@ -245,7 +239,7 @@ const Card = ({
         <Image src={image} alt="empty" loading="lazy" width="200" height="200" onClick={() => { compare(); setShowModal(!showModal); }} />
         <div><Line /></div>
         <Category>{category}</Category>
-        <Name>{itemName}</Name>
+        <Name onClick={sendProdId}>{itemName}</Name>
         <Description>
           $
           {price}

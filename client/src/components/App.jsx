@@ -28,6 +28,7 @@ class App extends React.Component {
     };
     // initializer();
     this.setRatingAndTotalRev = this.setRatingAndTotalRev.bind(this);
+    this.setProductId = this.setProductId.bind(this);
   }
 
   componentDidMount() {
@@ -47,12 +48,16 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('Error: error getting API data');
+        console.log('Error: error getting API data', err);
       });
   }
 
   setRatingAndTotalRev(rating, totalReviews) {
     this.setState({ rating, totalReviews });
+  }
+
+  setProductId(productId) {
+    this.setState({ productId });
   }
 
   render() {
@@ -71,9 +76,11 @@ class App extends React.Component {
             totalReviews={totalReviews}
           />
           <RelatedItems
+            productId={productId}
             related={related}
             styles={styles}
             product={product}
+            passBackProductId={this.setProductId}
           />
           <RatingAndReviews
             productId={productId}

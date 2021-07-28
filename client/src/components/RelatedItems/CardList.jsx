@@ -60,11 +60,13 @@ const Arrow = styled.div`
 let start = 0;
 let end = 4;
 
-const CardList = ({ related, product }) => {
+const CardList = ({ productId, related, product, passBackId }) => {
   const [cards, setCards] = useState(related.slice(0, 4));
   const [styledImage, setStyledImage] = useState([]);
   const [avgRatings, setAvgRatings] = useState([]);
   const [features, setFeatures] = useState([]);
+  const [prodId, setProdId] = useState(productId);
+
   let imageArray = [];
   let ratingsArray = [];
   let featuresArray = [];
@@ -123,6 +125,12 @@ const CardList = ({ related, product }) => {
     currentRatings = avgRatings.slice(start, end);
   };
 
+  const getProdId = (value) => {
+    setProdId(value);
+  };
+
+  passBackId(prodId);
+
   let leftArrow = (<Arrow className="left" onClick={moveLeft} />);
   let rightArrow = (<Arrow className="right" onClick={moveRight} />);
 
@@ -137,6 +145,7 @@ const CardList = ({ related, product }) => {
   const cardComponents = cards.map((item, index) => (
     <Card
       key={item.id}
+      id={item.id}
       ratings={currentRatings[index]}
       image={currentImages[index]}
       itemName={item.name}
@@ -144,6 +153,7 @@ const CardList = ({ related, product }) => {
       price={item.default_price}
       product={product}
       features={currentFeatures[index]}
+      getProdId={getProdId}
     />
   ));
 
