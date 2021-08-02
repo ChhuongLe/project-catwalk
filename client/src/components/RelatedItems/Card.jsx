@@ -93,32 +93,22 @@ const Modal = styled.div`
   transition-duration: 4s;
   justify-content: center;
   background-color: rgba(0,0,0,0.4);
-  display: flex;
 `;
 
 const StyledTable = styled.table`
   border-radius: 22px;
+  border: 1px solid black;
+  background-color: white;
+  min-height: 100px;
   position: fixed;
-  background: white;
-  min-width: 30%;
-  min-height: 30%;
   padding: 2%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
   z-index: 2;
   overflow: auto;
   flex-direction: column;
   border-spacing: 15px;
-  .th{
-     padding: 5px 10px;
-     width: 100%;
-  }
-  .td{
-    text-align: center !important;
-    min-width: 100%;
-  }
 `;
 
 // The related product id is passed down from cardList
