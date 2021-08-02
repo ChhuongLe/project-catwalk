@@ -56,8 +56,8 @@ class App extends React.Component {
     this.setState({ rating, totalReviews });
   }
 
-  setProductId(productId) {
-    this.setState({ productId });
+  setProductId(idTest) {
+    let id = idTest;
   }
 
   render() {

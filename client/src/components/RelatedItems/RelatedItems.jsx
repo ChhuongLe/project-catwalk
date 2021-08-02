@@ -25,7 +25,8 @@ const RelatedItems = ({ productId, related, product, passBackProductId }) => {
 
   // TODO: use passBackProductId to handle state in app.jsx
   // Currently throws an error
-  // passBackProductId(pID);
+  passBackProductId(pID);
+  console.log(pID);
 
   return (
     <Wrapper>
