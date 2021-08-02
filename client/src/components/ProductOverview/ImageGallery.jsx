@@ -108,6 +108,7 @@ const ImageGallery = (props) => {
           <ModalImage src={mainImage} loading="lazy" alt="modal" />
         </Modal>
       ) : null}
+    </ImageGalleryArea>
   );
 };
 
