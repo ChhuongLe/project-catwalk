@@ -1,4 +1,4 @@
-# Project Catwalk [Live Link](http://52.8.48.47:8080/)
+# Project Catwalk 
 
 ## Description
 
@@ -12,6 +12,7 @@ Project overview page that enables users to review and compare different product
 * [Executing Program](#Executing-Program)
 * [Overview](#Overview)
 * [Authors](#Authors)
+* [Live Link](http://52.8.48.47:8080/)
 <!--te-->
 
 ## Getting Started
