@@ -29,9 +29,6 @@ const getAllReviews = (id, numOfReviews, sortMethod) => {
   }
   const options = {
     url: `${config.APIURL}reviews/?product_id=${id}&count=${count}&sort=${sort}`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
   return (axios(options)
     .then((res) => res.data.results));
@@ -40,9 +37,6 @@ const getAllReviews = (id, numOfReviews, sortMethod) => {
 const getAverageRating = (id, callback) => {
   const options = {
     url: `${config.APIURL}reviews/?product_id=${id}`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   axios(options)
@@ -64,9 +58,6 @@ const getAverageRating = (id, callback) => {
 const getReviewMetaData = (id, callback) => {
   const options = {
     url: `${config.APIURL}reviews/meta/?product_id=${id}`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
   axios(options)
     .then((res) => {
@@ -106,9 +97,6 @@ const createReview = (postBody) => {
     url: `${config.APIURL}reviews/meta/`,
     method: 'POST',
     data: postBody,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   return axios(options);

@@ -4,9 +4,6 @@ const config = require('./config');
 const getCart = (callback) => {
   const options = {
     url: `${config.APIURL}cart`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   axios(options)
@@ -24,9 +21,6 @@ const addToCart = (skuId, quantity) => {
   const options = {
     url: `${config.APIURL}cart`,
     method: 'POST',
-    headers: {
-      Authorization: config.APITOKEN,
-    },
     data: {
       sku_id: skuId,
       count: quantity,

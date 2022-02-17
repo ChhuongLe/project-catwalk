@@ -6,9 +6,6 @@ const config = require('./config');
 const getAllProducts = () => {
   const options = {
     url: `${config.APIURL}products`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   axios(options)
@@ -25,9 +22,6 @@ const getAllProducts = () => {
 const getProductInfo = (productId, callback) => {
   const options = {
     url: `${config.APIURL}products/${productId}/`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   axios(options)
@@ -46,9 +40,6 @@ const getProductInfo = (productId, callback) => {
 const getAllStyles = (productId, callback) => {
   const options = {
     url: `${config.APIURL}products/${productId}/styles`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   axios(options)
@@ -66,9 +57,6 @@ const getAllStyles = (productId, callback) => {
 const getRelatedItems = (productId, callback) => {
   const options = {
     url: `${config.APIURL}products/${productId}/related`,
-    headers: {
-      Authorization: config.APITOKEN,
-    },
   };
 
   axios(options)
